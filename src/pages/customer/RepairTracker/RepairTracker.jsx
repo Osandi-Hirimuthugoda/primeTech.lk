@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import TopBar from '../../../components/customer/TopBar'
 import BottomNav from '../../../components/customer/BottomNav'
 import styles from './RepairTracker.module.css'
+import iphone16 from '../../../assets/images/iPhone 16 Pro.png'
 
 const steps = [
   {
@@ -59,7 +60,9 @@ const RepairTracker = () => {
               <span className={styles.warrantyText}>Standard 1-Year Warranty</span>
             </div>
           </div>
-          <div className={styles.deviceImgBox} />
+          <div className={styles.deviceImgBox}>
+            <img src={iphone16} alt="iPhone 16 Pro" className={styles.deviceImage} />
+          </div>
         </div>
 
         {/* Timeline */}
