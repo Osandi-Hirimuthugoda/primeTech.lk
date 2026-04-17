@@ -1,0 +1,13 @@
+.shell {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+@media (min-width: 768px) {
+  .shell {
+    margin-left: var(--sidebar-width);
+    /* center content with a comfortable max-width */
+    display: flex;
+    flex-direction: column;
+  }
+}
