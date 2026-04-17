@@ -1,0 +1,236 @@
+.page {
+  background: var(--color-bg);
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.header { padding: 8px 20px 4px; }
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.3px;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: 12px;
+  margin: 10px 16px;
+  padding: 12px 14px;
+  gap: 8px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: var(--color-text);
+  background: transparent;
+  width: 100%;
+}
+
+.searchInput::placeholder { color: #c4c9d4; }
+
+.filters {
+  display: flex;
+  gap: 8px;
+  padding: 4px 16px 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar { display: none; }
+
+.filterBtn {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.filterActive {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* Product Cards */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.card:active { transform: scale(0.98); }
+
+.imgBox {
+  width: 90px;
+  height: 110px;
+  background: #e8eaf0;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.info { flex: 1; }
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.storage {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+
+.star { color: #f59e0b; font-size: 12px; }
+.rating { font-size: 12px; font-weight: 600; color: var(--color-text); }
+.reviews { font-size: 11px; color: var(--color-text-muted); }
+
+.desc {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.cartBtn {
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Trade-In */
+.tradeBanner {
+  background: var(--color-white);
+  margin: 16px 16px 0;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tradeIcon { font-size: 28px; }
+
+.tradeTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tradeSub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.tradeLink {
+  font-size: 12px;
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tradeBtn {
+  background: #0a0a0a;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+/* Compare */
+.compareBanner {
+  background: #0a0a0a;
+  margin: 12px 16px 0;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.compareTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.compareSub {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.compareBtn {
+  background: var(--color-white);
+  color: var(--color-text);
+  border: none;
+  border-radius: 999px;
+  padding: 13px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}

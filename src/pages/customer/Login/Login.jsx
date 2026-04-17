@@ -13,7 +13,11 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault()
     // TODO: connect to backend
-    navigate('/home')
+    if (role === 'admin') {
+      navigate('/admin/products')
+    } else {
+      navigate('/home')
+    }
   }
 
   return (

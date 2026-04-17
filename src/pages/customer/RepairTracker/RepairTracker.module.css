@@ -1,0 +1,334 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+  padding-bottom: 100px;
+}
+
+/* Header */
+.claimRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.activePill {
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+}
+
+.claimId {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+/* Device Card */
+.deviceCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 18px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.deviceLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+.deviceName {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 3px;
+}
+
+.deviceSub {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.warrantyRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.warrantyIcon {
+  font-size: 13px;
+}
+
+.warrantyText {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.deviceImgBox {
+  width: 72px;
+  height: 90px;
+  background: linear-gradient(160deg, #ff6b35, #a855f7, #3b5bfc);
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+/* Timeline */
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-label);
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.stepRow {
+  display: flex;
+  gap: 14px;
+}
+
+.dotCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.dotDone {
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.check {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dotActive {
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gearIcon {
+  font-size: 15px;
+}
+
+.dotMuted {
+  width: 32px;
+  height: 32px;
+  background: var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.calIcon {
+  font-size: 14px;
+  filter: grayscale(1);
+}
+
+.lineBlue {
+  width: 2px;
+  flex: 1;
+  min-height: 20px;
+  background: var(--color-primary);
+  margin: 2px 0;
+}
+
+.lineGray {
+  width: 2px;
+  flex: 1;
+  min-height: 20px;
+  background: var(--color-border);
+  margin: 2px 0;
+}
+
+.stepContent {
+  flex: 1;
+  padding-bottom: 22px;
+}
+
+.dateBlue {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.dateActive {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.dateMuted {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-label);
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+.titleText {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.titleMuted {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.descText {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.descMuted {
+  font-size: 13px;
+  color: #c4c9d4;
+  line-height: 1.5;
+}
+
+/* Info Row */
+.infoRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.infoCard {
+  flex: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 14px 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.infoLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-label);
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+
+.infoVal {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 3px;
+}
+
+.infoSub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Help Banner */
+.helpBanner {
+  width: 100%;
+  background: var(--color-white);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.helpIcon {
+  width: 40px;
+  height: 40px;
+  background: #ede9fe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.helpText {
+  flex: 1;
+  text-align: left;
+}
+
+.helpTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.helpSub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.helpArrow {
+  font-size: 22px;
+  color: var(--color-text-muted);
+}
+
+.bottomPad {
+  height: 20px;
+}

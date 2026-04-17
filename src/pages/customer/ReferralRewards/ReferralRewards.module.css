@@ -1,0 +1,389 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 16px;
+  padding-bottom: 100px;
+}
+
+/* Hero Banner */
+.heroBanner {
+  background: linear-gradient(135deg, #4f6ef7, #3b5bfc);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.limitedBadge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+
+.heroSub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+  margin-bottom: 18px;
+  max-width: 220px;
+}
+
+.codeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.codeText {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.copyBtn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shareBtn {
+  background: #fff;
+  border: none;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+}
+
+.heroIcon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 52px;
+  opacity: 0.25;
+}
+
+/* Section Row */
+.sectionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-label);
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.pointsBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pointsIcon {
+  font-size: 14px;
+}
+
+.pointsVal {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Card */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  margin-bottom: 12px;
+}
+
+.purchaseTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.purchaseRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.bullet {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.purchaseName {
+  font-size: 13px;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.purchasePts {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.cartIcon {
+  font-size: 24px;
+  opacity: 0.4;
+}
+
+/* Redeem */
+.redeemBtn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #4f6ef7, #3b5bfc);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 16px rgba(59,91,252,0.35);
+  margin-bottom: 24px;
+}
+
+/* Active Reward */
+.rewardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.rewardLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-label);
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.rewardTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.discountBadge {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+/* Progress */
+.progressTrack {
+  height: 6px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f6ef7, #3b5bfc);
+  border-radius: var(--radius-full);
+}
+
+.progressDots {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 0 2px;
+}
+
+.dotWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dotFilled {
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+.dotEmpty {
+  width: 10px;
+  height: 10px;
+  background: var(--color-border);
+  border-radius: 50%;
+}
+
+.dotNum {
+  font-size: 10px;
+  color: var(--color-label);
+  font-weight: 600;
+}
+
+/* Impact */
+.impactRow {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.impactCard {
+  flex: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 16px 14px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.impactIcon {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.impactVal {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.impactSub {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-label);
+  letter-spacing: 0.5px;
+}
+
+/* Activity */
+.viewAll {
+  background: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activityCard {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 14px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 4px solid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.activityAvatar {
+  width: 36px;
+  height: 36px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.activityInfo {
+  flex: 1;
+}
+
+.activityName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.activityJoined {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.3px;
+}
+
+.activityRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.activityReward {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.activityBadge {
+  font-size: 10px;
+  font-weight: 700;
+  border: 1.5px solid;
+  border-radius: var(--radius-full);
+  padding: 2px 8px;
+  letter-spacing: 0.5px;
+}
+
+.bottomPad {
+  height: 20px;
+}

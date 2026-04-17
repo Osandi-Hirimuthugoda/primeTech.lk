@@ -1,0 +1,244 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+  padding-bottom: 100px;
+}
+
+/* Title */
+.title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* IMEI Track Row */
+.trackRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.trackIcon {
+  font-size: 22px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.trackText {
+  flex: 1;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+.trackBtn {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+}
+
+/* Form Card */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 18px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-label);
+  letter-spacing: 0.8px;
+}
+
+.input {
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  color: var(--color-text);
+  padding: 8px 0;
+  outline: none;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: #c4c9d4;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 8px 0;
+}
+
+.textarea {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--color-text);
+  padding: 8px 0;
+  outline: none;
+  width: 100%;
+  resize: none;
+  font-family: var(--font);
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.textarea::placeholder {
+  color: #c4c9d4;
+}
+
+/* Device Card */
+.deviceCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.deviceLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.deviceIcon {
+  font-size: 28px;
+  color: var(--color-primary);
+}
+
+.deviceName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.deviceSub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.selectedBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+/* Upload */
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 16px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  gap: 6px;
+  background: var(--color-white);
+}
+
+.uploadIcon {
+  font-size: 32px;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.uploadTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.uploadSub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileName {
+  font-size: 12px;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Submit */
+.submitBtn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #4f6ef7, #3b5bfc);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 24px rgba(59,91,252,0.4);
+  margin-bottom: 14px;
+  transition: transform 0.15s;
+}
+
+.submitBtn:hover {
+  transform: translateY(-1px);
+}
+
+.terms {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.bottomPad {
+  height: 20px;
+}
