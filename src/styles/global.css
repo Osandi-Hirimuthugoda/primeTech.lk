@@ -1,0 +1,38 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f0f2f7;
+  --color-white: #ffffff;
+  --color-primary: #3b5bfc;
+  --color-primary-dark: #2a47e0;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-label: #9ca3af;
+  --color-border: #e5e7eb;
+  --color-input-bg: #ffffff;
+  --color-forgot: #3b5bfc;
+  --radius-lg: 20px;
+  --radius-md: 12px;
+  --radius-full: 999px;
+  --font: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+input {
+  font-family: var(--font);
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+}
