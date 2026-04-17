@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import TopBar from '../../../components/customer/TopBar'
 import BottomNav from '../../../components/customer/BottomNav'
 import styles from './Compare.module.css'
+import iphone15 from '../../../assets/images/iPhone 15 Pro Titanium.png'
+import pixel8 from '../../../assets/images/Pixel 8 Pro Porcelain.png'
 
 const devices = {
   'iPhone 15 Pro': {
-    brand: 'APPLE', price: '$999', color: '#1c1c1e',
+    brand: 'APPLE', price: '$999', color: '#1c1c1e', img: iphone15,
     specs: {
       'DISPLAY TECHNOLOGY': { val: 'Super Retina XDR', sub: '6.1" OLED, 120Hz' },
       'PERFORMANCE':        { val: 'A17 Pro', sub: '3nm Architecture' },
@@ -16,7 +18,7 @@ const devices = {
     },
   },
   'Pixel 8 Pro': {
-    brand: 'GOOGLE', price: '$899', color: '#e8f0fe',
+    brand: 'GOOGLE', price: '$899', color: '#e8f0fe', img: pixel8,
     specs: {
       'DISPLAY TECHNOLOGY': { val: 'Super Actua', sub: '6.7" LTPO, 120Hz' },
       'PERFORMANCE':        { val: 'Tensor G3', sub: 'Next-Gen AI Core' },
@@ -80,13 +82,16 @@ const Compare = () => {
         <div className={styles.deviceRow}>
           <div className={styles.deviceCard}>
             <div className={styles.deviceImgBox} style={{ background: left.color }}>
+              <img src={left.img} alt={left.name} className={styles.deviceImageContent} />
               <div className={styles.swapBtn}>⇄</div>
             </div>
             <p className={styles.deviceBrand}>{left.brand}</p>
             <p className={styles.devicePrice}>{left.price}</p>
           </div>
           <div className={`${styles.deviceCard} ${styles.deviceCardRight}`}>
-            <div className={styles.deviceImgBox} style={{ background: right.color }} />
+            <div className={styles.deviceImgBox} style={{ background: right.color }}>
+              <img src={right.img} alt={right.name} className={styles.deviceImageContent} />
+            </div>
             <p className={styles.deviceBrand}>{right.brand}</p>
             <p className={styles.devicePrice}>{right.price}</p>
           </div>

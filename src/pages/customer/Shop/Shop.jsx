@@ -3,13 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import TopBar from '../../../components/customer/TopBar'
 import BottomNav from '../../../components/customer/BottomNav'
 import styles from './Shop.module.css'
+import samsung from '../../../assets/images/image 12.png'
+import zfold from '../../../assets/images/image 24.png'
+import pixel from '../../../assets/images/pixel 10 pro.png'
 
 const filters = ['BRANDS', 'PRICE', 'STORAGE', 'COLOR']
 
 const products = [
-  { id: 1, name: 'Samsung S26 Ultra', price: '$1,199', storage: '256GB', rating: 4.8, reviews: 1200 },
-  { id: 2, name: 'Pixel Pro 5', price: '$949', storage: '128GB', rating: 4.6, reviews: 890 },
-  { id: 3, name: 'Galaxy Fold 7', price: '$1,799', storage: '512GB', rating: 4.9, reviews: 540 },
+  { id: 1, name: 'Samsung S26 Ultra', price: '$1,199', storage: '256GB', rating: 4.8, reviews: 1200, img: samsung },
+  { id: 2, name: 'Pixel Pro 5', price: '$949', storage: '128GB', rating: 4.6, reviews: 890, img: pixel },
+  { id: 3, name: 'Galaxy Fold 7', price: '$1,799', storage: '512GB', rating: 4.9, reviews: 540, img: zfold },
 ]
 
 const Shop = () => {
@@ -48,7 +51,9 @@ const Shop = () => {
       <div className={styles.list}>
         {products.map((p) => (
           <div key={p.id} className={styles.card} onClick={() => navigate(`/product/${p.id}`)}>
-            <div className={styles.imgBox} />
+            <div className={styles.imgBox}>
+              <img src={p.img} alt={p.name} className={styles.cardImageContent} />
+            </div>
             <div className={styles.info}>
               <p className={styles.name}>{p.name}</p>
               <p className={styles.storage}>{p.storage}</p>

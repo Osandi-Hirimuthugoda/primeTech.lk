@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import TopBar from '../../../components/customer/TopBar'
 import styles from './Product.module.css'
+import iphone17 from '../../../assets/images/image 1.png'
 
 const specs = [
   { icon: '⚡', label: 'Processor', value: 'A18 Pro' },
@@ -28,7 +29,9 @@ const Product = () => {
 
       {/* Product Image */}
       <div className={styles.imgSection}>
-        <div className={styles.imgBox} />
+        <div className={styles.imgBox}>
+          <img src={iphone17} alt="iPhone 17 Pro" className={styles.cardImageContent} />
+        </div>
         <div className={styles.badge}>
           <span className={styles.badgeTag}>NEW ARRIVAL</span>
           <div className={styles.ratingRow}>

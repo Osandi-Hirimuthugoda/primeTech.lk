@@ -22,7 +22,19 @@
   height: 200px;
   background: #222;
   border-radius: 16px;
+  overflow: hidden;    /* CRITICAL: This hides the parts of the image that stick out */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+ .cardImageContent {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 'contain' ensures the whole phone is visible without cropping */
+  padding: 8px;        /* Optional: adds a little breathing room so the phone isn't touching the edges */
+  transition: transform 0.3s ease;
+} 
 
 .badge {
   position: absolute;

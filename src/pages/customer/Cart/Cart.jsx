@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import TopBar from '../../../components/customer/TopBar'
 import styles from './Cart.module.css'
+import iphone17 from '../../../assets/images/Obsidian Black Smartphone.png'
+import pixel8 from '../../../assets/images/Titanium Grey Smartphone.png'
 
 const initialItems = [
-  { id: 1, name: 'iPhone 17', variant: 'TITANIUM BLUE • 512GB', price: 1399, qty: 1 },
-  { id: 2, name: 'Pixel 8 Pro', variant: 'OBSIDIAN • 256GB', price: 999, qty: 1 },
+  { id: 1, name: 'iPhone 17', variant: 'TITANIUM BLUE • 512GB', price: 1399, qty: 1, img: iphone17 },
+  { id: 2, name: 'Pixel 8 Pro', variant: 'OBSIDIAN • 256GB', price: 999, qty: 1, img: pixel8 },
 ]
 
 const Cart = () => {
@@ -35,7 +37,9 @@ const Cart = () => {
       <div className={styles.items}>
         {items.map((item) => (
           <div key={item.id} className={styles.card}>
-            <div className={styles.imgBox} />
+            <div className={styles.imgBox}>
+              <img src={item.img} alt={item.name} className={styles.cardImageContent} />
+            </div>
             <div className={styles.info}>
               <p className={styles.name}>{item.name}</p>
               <p className={styles.variant}>{item.variant}</p>
