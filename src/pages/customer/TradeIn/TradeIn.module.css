@@ -12,377 +12,280 @@
   padding-bottom: 100px;
 }
 
+/* Header */
 .tag {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: 0.8px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .title {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 800;
   color: var(--color-text);
+  line-height: 1.2;
   letter-spacing: -0.5px;
-  line-height: 1.15;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.sub {
-  font-size: 13px;
-  color: var(--color-text-muted);
-  line-height: 1.5;
+.titleBlue { color: var(--color-primary); }
+
+/* Hero */
+.heroImg {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #1c1c1e, #2c2c2e, #3a3a3c);
+  border-radius: var(--radius-lg);
   margin-bottom: 24px;
 }
 
-/* Steps */
-.steps {
+/* Step */
+.stepHeader {
   display: flex;
   align-items: center;
-  margin-bottom: 28px;
-  gap: 0;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 
-.stepItem {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex: 1;
-}
-
-.stepNum {
+.stepBadge {
   width: 28px;
   height: 28px;
+  background: var(--color-primary);
+  color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   flex-shrink: 0;
 }
 
-.stepActive {
-  background: var(--color-primary);
-  color: #fff;
+.stepTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
 }
 
-.stepDone {
-  background: var(--color-primary);
-  color: #fff;
+/* Search */
+.searchRow {
+  display: flex;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  gap: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
-.stepIdle {
-  background: var(--color-border);
-  color: var(--color-label);
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--color-text);
+  outline: none;
 }
 
-.stepLabel {
-  font-size: 11px;
+.searchInput::placeholder { color: #c4c9d4; }
+.searchIcon { font-size: 16px; flex-shrink: 0; }
+
+/* Device Type */
+.typeRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.typeRow::-webkit-scrollbar { display: none; }
+
+.typeBtn {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  font-size: 13px;
   font-weight: 600;
-  color: var(--color-label);
+  color: var(--color-text);
   white-space: nowrap;
 }
 
-.stepLabelActive {
-  color: var(--color-primary);
-}
-
-.stepLine {
-  flex: 1;
-  height: 2px;
-  background: var(--color-border);
-  margin: 0 4px;
-}
-
-.stepLineDone {
+.typeActive {
   background: var(--color-primary);
-}
-
-/* Section Label */
-.sectionLabel {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--color-label);
-  letter-spacing: 0.8px;
-  margin-bottom: 12px;
-}
-
-/* Device List */
-.deviceList {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.deviceCard {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 2px solid transparent;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-  cursor: pointer;
-  position: relative;
-  transition: border-color 0.15s;
-}
-
-.deviceSelected {
+  color: #fff;
   border-color: var(--color-primary);
 }
 
-.deviceImgBox {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, #2c2c2e, #3a3a3c);
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-
-.deviceInfo {
-  flex: 1;
-}
-
-.deviceName {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 2px;
-}
-
-.deviceSub {
-  font-size: 12px;
-  color: var(--color-text-muted);
-}
-
-.deviceRight {
-  text-align: right;
-}
-
-.deviceValue {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--color-primary);
-}
-
-.deviceValueSub {
-  font-size: 10px;
-  color: var(--color-label);
-}
-
-.checkMark {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  color: var(--color-primary);
-  font-size: 14px;
-  font-weight: 700;
-}
-
-/* Buttons */
-.nextBtn {
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(135deg, #4f6ef7, #3b5bfc);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-full);
-  font-size: 15px;
-  font-weight: 700;
-  box-shadow: 0 4px 16px rgba(59,91,252,0.35);
-}
-
-/* Condition */
-.conditionList {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.conditionBtn {
-  background: var(--color-white);
-  border: 2px solid transparent;
-  border-radius: var(--radius-lg);
-  padding: 14px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-align: left;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-  cursor: pointer;
-  position: relative;
-  transition: border-color 0.15s;
-}
-
-.conditionActive {
-  border-color: var(--color-primary);
-}
-
-.conditionIcon {
-  font-size: 22px;
-  flex-shrink: 0;
-}
-
-.conditionName {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: 2px;
-}
-
-.conditionDesc {
-  font-size: 12px;
-  color: var(--color-text-muted);
-}
-
-.btnRow {
-  display: flex;
-  gap: 10px;
-}
-
-.backBtn {
-  flex: 1;
-  padding: 16px;
-  background: var(--color-white);
-  color: var(--color-text);
-  border: none;
-  border-radius: var(--radius-full);
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-}
-
-.nextBtn2 {
-  flex: 2;
-  padding: 16px;
-  background: linear-gradient(135deg, #4f6ef7, #3b5bfc);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-full);
-  font-size: 15px;
-  font-weight: 700;
-  box-shadow: 0 4px 16px rgba(59,91,252,0.35);
-}
-
-/* Value Card */
-.valueCard {
+/* Condition Card */
+.conditionCard {
   background: var(--color-white);
   border-radius: var(--radius-lg);
   padding: 20px 16px;
   margin-bottom: 16px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.valueLabel {
+.condLabel {
   font-size: 10px;
   font-weight: 700;
   color: var(--color-label);
   letter-spacing: 0.8px;
-  margin-bottom: 6px;
+  margin: 12px 0 8px;
 }
 
-.valueBig {
-  font-size: 42px;
-  font-weight: 800;
-  color: var(--color-text);
-  letter-spacing: -1px;
-  margin-bottom: 16px;
-}
+.condLabel:first-of-type { margin-top: 4px; }
 
-.valueDeviceRow {
+.condRow {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 10px;
+  margin-bottom: 4px;
 }
 
-.deviceImgBoxSm {
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, #2c2c2e, #3a3a3c);
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-
-.conditionPill {
-  margin-left: auto;
+.condBtn {
+  flex: 1;
   background: var(--color-bg);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-full);
-  padding: 4px 12px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.condActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.condActive .condText { color: #fff; }
+.condActive .condIcon { color: #fff; }
+
+.condIcon {
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+.condText {
   font-size: 12px;
   font-weight: 600;
   color: var(--color-text);
 }
 
-/* Info Box */
-.infoBox {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: 16px;
+/* Upload */
+.uploadBox {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  align-items: center;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 16px;
+  margin-bottom: 16px;
+  background: var(--color-white);
+  cursor: pointer;
+  gap: 4px;
 }
 
-.infoItem {
+.uploadIcon { font-size: 28px; margin-bottom: 4px; }
+.uploadTitle { font-size: 14px; font-weight: 700; color: var(--color-text); }
+.uploadSub { font-size: 12px; color: var(--color-text-muted); }
+.fileInput { display: none; }
+.fileName { font-size: 12px; color: var(--color-primary); font-weight: 600; margin-top: 4px; }
+
+/* Valuation */
+.valuationCard {
+  background: linear-gradient(135deg, #4f6ef7, #3b5bfc);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  margin-bottom: 16px;
+}
+
+.valuationLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.valuationSub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 8px;
+}
+
+.valuationPrice {
+  font-size: 44px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.valuationLkr {
   font-size: 14px;
-  color: var(--color-text);
-  font-weight: 500;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
 }
 
-.startTradeBtn {
+.valuationNote {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+/* Buttons */
+.applyBtn {
   width: 100%;
-  padding: 16px;
+  padding: 18px;
   background: linear-gradient(135deg, #4f6ef7, #3b5bfc);
   color: #fff;
   border: none;
   border-radius: var(--radius-full);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
-  box-shadow: 0 4px 16px rgba(59,91,252,0.35);
+  box-shadow: 0 6px 20px rgba(59,91,252,0.4);
   margin-bottom: 12px;
 }
 
-.backBtn2 {
+.storeBtn {
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   background: var(--color-white);
   color: var(--color-text);
   border: none;
   border-radius: var(--radius-full);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   box-shadow: 0 1px 6px rgba(0,0,0,0.06);
 }
 
-.bottomPad {
-  height: 20px;
-}
+.bottomPad { height: 20px; }
 
 @media (min-width: 768px) {
   .page { margin-left: var(--sidebar-width); }
   .scroll { padding: 28px 40px 60px; max-width: none; }
-  .title { font-size: 40px; line-height: 1.1; }
-  .steps { max-width: 500px; }
-  .deviceList { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .deviceCard { border-radius: 20px; padding: 20px; flex-direction: column; align-items: flex-start; }
-  .deviceImgBox { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 12px; }
-  .deviceValue { font-size: 20px; }
-  .conditionList { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .conditionBtn { border-radius: 20px; padding: 20px; }
-  .valueCard { padding: 32px; border-radius: 24px; }
-  .valueBig { font-size: 56px; }
-  .nextBtn, .nextBtn2, .startTradeBtn { padding: 18px; font-size: 16px; }
+  .title { font-size: 40px; }
+  .heroImg { height: 260px; }
+  .conditionCard { padding: 28px 24px; }
+  .condRow { gap: 16px; }
+  .condBtn { padding: 20px 14px; }
+  .typeRow { gap: 12px; }
+  .valuationCard { padding: 32px 28px; }
+  .valuationPrice { font-size: 56px; }
 }
 
 @media (min-width: 1200px) {
   .scroll { padding: 32px 60px 60px; }
-  .deviceList { grid-template-columns: repeat(3, 1fr); }
+  .condRow { gap: 20px; }
 }

@@ -21,6 +21,11 @@
   border: none;
   padding: 4px 16px;
   border-radius: 12px;
+  color: var(--color-text-muted);
+}
+
+.item.active {
+  color: var(--color-primary);
 }
 
 .icon { font-size: 20px; line-height: 1; }
@@ -28,10 +33,10 @@
 .label {
   font-size: 10px;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: inherit;
 }
 
-.active .label { color: var(--color-primary); font-weight: 700; }
+.active .label { font-weight: 700; }
 
 /* ── Desktop Sidebar (hidden on mobile) ── */
 .sidebar { display: none; }
