@@ -78,8 +78,10 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 700;
     flex-shrink: 0;
+    line-height: 1;
   }
 
   .brandName {
