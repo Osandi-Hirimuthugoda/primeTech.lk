@@ -201,3 +201,16 @@
     height: 260px;
   }
 }
+
+@media (min-width: 768px) {
+  .page { background: linear-gradient(135deg, #eef1ff 0%, #f0f2f7 100%); }
+  .card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    box-shadow: 0 8px 40px rgba(59,91,252,0.12);
+    max-width: 460px;
+  }
+  .heroWrap { height: 280px; }
+  .title { font-size: 36px; }
+}

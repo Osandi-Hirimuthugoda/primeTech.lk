@@ -19,6 +19,7 @@
   --radius-md: 12px;
   --radius-full: 999px;
   --font: 'Inter', sans-serif;
+  --sidebar-width: 220px;
 }
 
 body {
@@ -28,11 +29,19 @@ body {
   min-height: 100vh;
 }
 
-input {
+input, textarea, select {
   font-family: var(--font);
 }
 
 button {
   font-family: var(--font);
   cursor: pointer;
+}
+
+/* ── Desktop: all customer pages offset by sidebar ── */
+@media (min-width: 768px) {
+  /* Push all page content right of sidebar */
+  .customerPage {
+    margin-left: var(--sidebar-width);
+  }
 }

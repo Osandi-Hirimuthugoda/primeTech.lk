@@ -242,3 +242,18 @@
 .bottomPad {
   height: 20px;
 }
+
+@media (min-width: 768px) {
+  .page { margin-left: var(--sidebar-width); }
+  .scroll { padding: 28px 40px 60px; max-width: none; }
+  .title { font-size: 38px; }
+  .trackRow { padding: 18px 24px; border-radius: 20px; }
+  .card { padding: 24px; border-radius: 20px; }
+  .deviceCard { padding: 24px; border-radius: 20px; }
+  .uploadBox { padding: 48px 24px; border-radius: 20px; }
+  .submitBtn { padding: 20px; font-size: 17px; }
+}
+
+@media (min-width: 1200px) {
+  .scroll { padding: 32px 60px 60px; }
+}

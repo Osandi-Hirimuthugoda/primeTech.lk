@@ -491,3 +491,30 @@
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(59,91,252,0.35);
 }
+
+@media (min-width: 768px) {
+  .page { margin-left: var(--sidebar-width); }
+  .scroll {
+    padding: 0 40px 140px;
+    max-width: none;
+  }
+  .inputBar {
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    max-width: none;
+    transform: none;
+    bottom: 0;
+    padding: 14px 40px;
+  }
+  .aiHeader { padding: 32px 0 20px; }
+  .aiAvatar { width: 72px; height: 72px; font-size: 28px; }
+  .aiName { font-size: 26px; }
+  .aiDesc { font-size: 15px; max-width: 360px; }
+  .quickRow { gap: 12px; }
+  .quickChip { padding: 10px 20px; font-size: 14px; }
+  .chatArea { max-width: 800px; margin: 0 auto; }
+  .aiBubble { max-width: 55%; font-size: 15px; }
+  .userBubble { max-width: 55%; font-size: 15px; }
+  .card { padding: 24px; }
+  .estimatedPrice { font-size: 48px; }
+}

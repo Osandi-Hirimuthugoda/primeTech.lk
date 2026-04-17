@@ -4,131 +4,149 @@ import TopBar from '../../../components/customer/TopBar'
 import BottomNav from '../../../components/customer/BottomNav'
 import styles from './TradeIn.module.css'
 
-const devices = [
-  { id: 1, name: 'iPhone 16 Pro', sub: 'Natural Titanium', value: '$450', condition: 'Good' },
-  { id: 2, name: 'iPhone 15', sub: 'Black', value: '$280', condition: 'Good' },
-  { id: 3, name: 'Samsung S24 Ultra', sub: 'Titanium Gray', value: '$390', condition: 'Fair' },
+const deviceTypes = ['iPhone', 'iPad', 'MacBook', 'Watch']
+
+const screenConditions = [
+  { id: 'flawless', label: 'Flawless', icon: '✓' },
+  { id: 'cracked', label: 'Cracked/Dead', icon: '○' },
 ]
 
-const conditions = ['Excellent', 'Good', 'Fair', 'Poor']
+const powerConditions = [
+  { id: 'on', label: 'Turns On', icon: '⏻' },
+  { id: 'no_power', label: 'No Power', icon: '⏻' },
+]
+
+const bodyConditions = [
+  { id: 'mint', label: 'Mint', icon: '✓' },
+  { id: 'worn', label: 'Worn/Dented', icon: '○' },
+]
 
 const TradeIn = () => {
   const navigate = useNavigate()
-  const [selected, setSelected] = useState(devices[0])
-  const [condition, setCondition] = useState('Good')
-  const [step, setStep] = useState(1)
+  const [deviceType, setDeviceType] = useState('iPhone')
+  const [search, setSearch] = useState('')
+  const [screen, setScreen] = useState('flawless')
+  const [power, setPower] = useState('on')
+  const [body, setBody] = useState('mint')
+  const [file, setFile] = useState(null)
+
+  const estimatedValue = screen === 'flawless' && power === 'on' && body === 'mint' ? 450 : 280
 
   return (
     <div className={styles.page}>
       <TopBar title="PrimeTechLK" showBack />
 
       <div className={styles.scroll}>
-        <p className={styles.tag}>TRADE-IN PROGRAM</p>
-        <h1 className={styles.title}>Get the Best<br />Value for Your<br />Device</h1>
-        <p className={styles.sub}>Instant valuation. No hidden fees. Credit applied directly to your next purchase.</p>
+        {/* Header */}
+        <p className={styles.tag}>TRADE-IN & UPGRADE</p>
+        <h1 className={styles.title}>
+          Turn your old tech into{' '}
+          <span className={styles.titleBlue}>new possibilities.</span>
+        </h1>
 
-        {/* Step Indicator */}
-        <div className={styles.steps}>
-          {['Select Device', 'Condition', 'Confirm'].map((s, i) => (
-            <div key={s} className={styles.stepItem}>
-              <div className={`${styles.stepNum} ${step > i ? styles.stepDone : step === i + 1 ? styles.stepActive : styles.stepIdle}`}>
-                {step > i + 1 ? '✓' : i + 1}
-              </div>
-              <span className={`${styles.stepLabel} ${step === i + 1 ? styles.stepLabelActive : ''}`}>{s}</span>
-              {i < 2 && <div className={`${styles.stepLine} ${step > i + 1 ? styles.stepLineDone : ''}`} />}
-            </div>
+        {/* Hero Image Placeholder */}
+        <div className={styles.heroImg} />
+
+        {/* Step 1 */}
+        <div className={styles.stepHeader}>
+          <div className={styles.stepBadge}>1</div>
+          <span className={styles.stepTitle}>Select your device</span>
+        </div>
+
+        <div className={styles.searchRow}>
+          <input
+            className={styles.searchInput}
+            placeholder="Search model (e.g., iPhone 14 Pro)"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <span className={styles.searchIcon}>🔍</span>
+        </div>
+
+        <div className={styles.typeRow}>
+          {deviceTypes.map((t) => (
+            <button
+              key={t}
+              className={`${styles.typeBtn} ${deviceType === t ? styles.typeActive : ''}`}
+              onClick={() => setDeviceType(t)}
+            >{t}</button>
           ))}
         </div>
 
-        {step === 1 && (
-          <>
-            <p className={styles.sectionLabel}>SELECT YOUR DEVICE</p>
-            <div className={styles.deviceList}>
-              {devices.map((d) => (
-                <div
-                  key={d.id}
-                  className={`${styles.deviceCard} ${selected.id === d.id ? styles.deviceSelected : ''}`}
-                  onClick={() => setSelected(d)}
-                >
-                  <div className={styles.deviceImgBox} />
-                  <div className={styles.deviceInfo}>
-                    <p className={styles.deviceName}>{d.name}</p>
-                    <p className={styles.deviceSub}>{d.sub}</p>
-                  </div>
-                  <div className={styles.deviceRight}>
-                    <p className={styles.deviceValue}>{d.value}</p>
-                    <p className={styles.deviceValueSub}>est. value</p>
-                  </div>
-                  {selected.id === d.id && <span className={styles.checkMark}>✓</span>}
-                </div>
-              ))}
-            </div>
-            <button className={styles.nextBtn} onClick={() => setStep(2)}>
-              Continue →
-            </button>
-          </>
-        )}
+        {/* Step 2 */}
+        <div className={styles.conditionCard}>
+          <div className={styles.stepHeader}>
+            <div className={styles.stepBadge}>2</div>
+            <span className={styles.stepTitle}>Condition Details</span>
+          </div>
 
-        {step === 2 && (
-          <>
-            <p className={styles.sectionLabel}>DEVICE CONDITION</p>
-            <div className={styles.conditionList}>
-              {conditions.map((c) => (
-                <button
-                  key={c}
-                  className={`${styles.conditionBtn} ${condition === c ? styles.conditionActive : ''}`}
-                  onClick={() => setCondition(c)}
-                >
-                  <span className={styles.conditionIcon}>
-                    {c === 'Excellent' ? '⭐' : c === 'Good' ? '👍' : c === 'Fair' ? '👌' : '⚠️'}
-                  </span>
-                  <div>
-                    <p className={styles.conditionName}>{c}</p>
-                    <p className={styles.conditionDesc}>
-                      {c === 'Excellent' ? 'Like new, no scratches' :
-                       c === 'Good' ? 'Minor wear, fully functional' :
-                       c === 'Fair' ? 'Visible wear, works fine' :
-                       'Heavy wear or damage'}
-                    </p>
-                  </div>
-                  {condition === c && <span className={styles.checkMark}>✓</span>}
-                </button>
-              ))}
-            </div>
-            <div className={styles.btnRow}>
-              <button className={styles.backBtn} onClick={() => setStep(1)}>← Back</button>
-              <button className={styles.nextBtn2} onClick={() => setStep(3)}>See Value →</button>
-            </div>
-          </>
-        )}
+          <p className={styles.condLabel}>SCREEN CONDITION</p>
+          <div className={styles.condRow}>
+            {screenConditions.map((c) => (
+              <button
+                key={c.id}
+                className={`${styles.condBtn} ${screen === c.id ? styles.condActive : ''}`}
+                onClick={() => setScreen(c.id)}
+              >
+                <span className={styles.condIcon}>{c.icon}</span>
+                <span className={styles.condText}>{c.label}</span>
+              </button>
+            ))}
+          </div>
 
-        {step === 3 && (
-          <>
-            <div className={styles.valueCard}>
-              <p className={styles.valueLabel}>ESTIMATED TRADE-IN VALUE</p>
-              <p className={styles.valueBig}>{selected.value}</p>
-              <div className={styles.valueDeviceRow}>
-                <div className={styles.deviceImgBoxSm} />
-                <div>
-                  <p className={styles.deviceName}>{selected.name}</p>
-                  <p className={styles.deviceSub}>{selected.sub}</p>
-                </div>
-                <span className={styles.conditionPill}>{condition}</span>
-              </div>
-            </div>
+          <p className={styles.condLabel}>POWER & FUNCTION</p>
+          <div className={styles.condRow}>
+            {powerConditions.map((c) => (
+              <button
+                key={c.id}
+                className={`${styles.condBtn} ${power === c.id ? styles.condActive : ''}`}
+                onClick={() => setPower(c.id)}
+              >
+                <span className={styles.condIcon}>{c.icon}</span>
+                <span className={styles.condText}>{c.label}</span>
+              </button>
+            ))}
+          </div>
 
-            <div className={styles.infoBox}>
-              <p className={styles.infoItem}>✅ Credit applied to next purchase</p>
-              <p className={styles.infoItem}>✅ Free device pickup available</p>
-              <p className={styles.infoItem}>✅ Instant approval in 24 hrs</p>
-            </div>
+          <p className={styles.condLabel}>BODY CONDITION</p>
+          <div className={styles.condRow}>
+            {bodyConditions.map((c) => (
+              <button
+                key={c.id}
+                className={`${styles.condBtn} ${body === c.id ? styles.condActive : ''}`}
+                onClick={() => setBody(c.id)}
+              >
+                <span className={styles.condIcon}>{c.icon}</span>
+                <span className={styles.condText}>{c.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
 
-            <button className={styles.startTradeBtn} onClick={() => navigate('/shop')}>
-              Start Trade-In →
-            </button>
-            <button className={styles.backBtn2} onClick={() => setStep(2)}>← Adjust Condition</button>
-          </>
-        )}
+        {/* Upload */}
+        <label className={styles.uploadBox}>
+          <div className={styles.uploadIcon}>☁️</div>
+          <p className={styles.uploadTitle}>Upload Receipt/Photo</p>
+          <p className={styles.uploadSub}>PNG, JPG or PDF up to 10MB</p>
+          <input type="file" accept=".png,.jpg,.jpeg,.pdf" className={styles.fileInput}
+            onChange={(e) => setFile(e.target.files[0])} />
+          {file && <p className={styles.fileName}>{file.name}</p>}
+        </label>
+
+        {/* Valuation Card */}
+        <div className={styles.valuationCard}>
+          <p className={styles.valuationLabel}>INSTANT VALUATION</p>
+          <p className={styles.valuationSub}>Estimated Credit Value</p>
+          <p className={styles.valuationPrice}>${estimatedValue}.00</p>
+          <p className={styles.valuationLkr}>LKR {(estimatedValue * 322).toLocaleString()}*</p>
+          <p className={styles.valuationNote}>*Value depends on physical inspection by our certified curators.</p>
+        </div>
+
+        {/* Actions */}
+        <button className={styles.applyBtn}>Apply to Next Purchase</button>
+        <button className={styles.storeBtn} onClick={() => navigate('/order-tracking')}>
+          📍 Find a Store
+        </button>
 
         <div className={styles.bottomPad} />
       </div>

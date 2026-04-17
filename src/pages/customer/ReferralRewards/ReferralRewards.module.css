@@ -387,3 +387,24 @@
 .bottomPad {
   height: 20px;
 }
+
+@media (min-width: 768px) {
+  .page { margin-left: var(--sidebar-width); }
+  .scroll { padding: 28px 40px 60px; max-width: none; }
+  .heroBanner { padding: 36px 32px; border-radius: 28px; margin-bottom: 32px; }
+  .heroTitle { font-size: 36px; }
+  .heroSub { font-size: 15px; max-width: 360px; }
+  .card { padding: 24px; border-radius: 20px; }
+  .redeemBtn { padding: 18px; font-size: 16px; }
+  .rewardTitle { font-size: 24px; }
+  .discountBadge { font-size: 26px; }
+  .impactRow { gap: 24px; }
+  .impactCard { padding: 24px; border-radius: 20px; }
+  .impactVal { font-size: 28px; }
+  .activityList { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .activityCard { border-radius: 16px; padding: 18px; }
+}
+
+@media (min-width: 1200px) {
+  .scroll { padding: 32px 60px 60px; }
+}

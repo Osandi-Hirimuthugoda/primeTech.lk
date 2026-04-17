@@ -1,8 +1,6 @@
 .page {
   background: var(--color-bg);
   min-height: 100vh;
-  max-width: 480px;
-  margin: 0 auto;
   padding-bottom: 80px;
 }
 
@@ -184,6 +182,74 @@
   cursor: pointer;
 }
 
+/* ── Service Grid ── */
+.serviceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.serviceCard {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  transition: transform 0.15s;
+}
+
+.serviceCard:hover { transform: translateY(-2px); }
+
+.serviceCardWide {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.15s;
+}
+
+.serviceCardWide:hover { transform: translateY(-2px); }
+
+.serviceIconWrap {
+  width: 44px;
+  height: 44px;
+  background: #eef1ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.serviceCardWide .serviceIconWrap {
+  margin-bottom: 0;
+}
+
+.serviceIcon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-primary);
+  stroke: var(--color-primary);
+}
+
+.serviceName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.serviceSub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
 /* ── Categories ── */
 .categoryRow {
   display: flex;
@@ -204,7 +270,10 @@
 }
 
 .categoryImgBox {
-  font-size: 26px;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .categoryLabel {
@@ -466,3 +535,80 @@
 }
 
 .bottomPad { height: 20px; }
+
+/* ── Desktop ── */
+@media (min-width: 768px) {
+  .page {
+    margin-left: var(--sidebar-width);
+    max-width: none;
+    width: calc(100% - var(--sidebar-width));
+    padding-bottom: 40px;
+  }
+  .hero {
+    margin: 20px 40px;
+    min-height: 320px;
+    padding: 48px 48px;
+    border-radius: 28px;
+  }
+  .heroTitle { font-size: 48px; }
+  .heroSub { font-size: 14px; max-width: 280px; }
+  .heroBtn { padding: 14px 28px; font-size: 15px; }
+  .heroImgBox { width: 180px; height: 260px; border-radius: 24px; }
+  .brandRow { padding: 16px 40px 4px; gap: 12px; }
+  .brandBtn { padding: 9px 24px; font-size: 14px; }
+  .searchWrap { margin: 12px 40px; padding: 14px 18px; }
+  .searchInput { font-size: 15px; }
+  .quickLinks { padding: 12px 40px; gap: 20px; overflow-x: visible; flex-wrap: wrap; }
+  .quickItem { width: 80px; }
+  .quickIcon { width: 68px; height: 68px; font-size: 28px; border-radius: 20px; }
+  .quickLabel { font-size: 11px; width: 80px; }
+  .section { padding: 24px 40px 0; }
+  .sectionTitle { font-size: 18px; }
+  .serviceGrid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .serviceCardWide { padding: 24px 20px; }
+  .serviceCard { padding: 24px 20px; }
+  .categoryRow { gap: 20px; }
+  .categoryCard { padding: 24px 16px; border-radius: 16px; }
+  .categoryImgBox { font-size: 36px; }
+  .categoryLabel { font-size: 14px; }
+  .productRow { gap: 20px; overflow-x: visible; flex-wrap: wrap; }
+  .darkCard { width: calc(25% - 15px); min-width: 180px; border-radius: 20px; }
+  .darkCardImg { height: 180px; }
+  .darkCardName { font-size: 15px; }
+  .darkCardPrice { font-size: 16px; }
+  .lightCard { width: calc(25% - 15px); min-width: 180px; border-radius: 20px; }
+  .lightCardImg { height: 180px; }
+  .productName { font-size: 15px; }
+  .productPrice { font-size: 16px; }
+  .aiBanner { margin: 24px 40px 0; padding: 36px; border-radius: 24px; flex-direction: row; align-items: center; gap: 32px; }
+  .aiTop { flex: 1; }
+  .aiTitle { font-size: 20px; }
+  .aiSub { font-size: 14px; }
+  .aiBtn { width: auto; padding: 14px 32px; font-size: 14px; white-space: nowrap; }
+  .featuredBanner { margin: 24px 40px 0; padding: 40px; border-radius: 24px; }
+  .featuredTitle { font-size: 32px; }
+  .featuredSub { font-size: 14px; }
+  .featuredPrice { font-size: 28px; }
+  .addBtn { padding: 14px 28px; font-size: 14px; }
+  .featuredImgBox { width: 160px; height: 200px; border-radius: 20px; }
+  .compareRow { gap: 20px; }
+  .compareCard { border-radius: 16px; }
+  .compareImgBox { height: 140px; }
+  .compareName { font-size: 14px; padding: 12px 14px 4px; }
+  .compareSub { font-size: 12px; padding: 0 14px 4px; }
+  .comparePrice { font-size: 16px; padding: 0 14px 14px; }
+}
+
+@media (min-width: 1200px) {
+  .hero { margin: 24px 60px; min-height: 380px; padding: 60px 64px; }
+  .heroTitle { font-size: 56px; }
+  .heroImgBox { width: 220px; height: 320px; }
+  .brandRow { padding: 16px 60px 4px; }
+  .searchWrap { margin: 12px 60px; }
+  .quickLinks { padding: 12px 60px; }
+  .section { padding: 28px 60px 0; }
+  .aiBanner { margin: 28px 60px 0; }
+  .featuredBanner { margin: 28px 60px 0; }
+  .darkCard { width: calc(20% - 16px); }
+  .lightCard { width: calc(20% - 16px); }
+}

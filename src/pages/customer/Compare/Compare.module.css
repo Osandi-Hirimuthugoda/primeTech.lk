@@ -82,6 +82,7 @@
   height: 160px;
   width: 160px;
   aspect-ratio: 1;
+  max-height: 160px;
   border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
@@ -224,4 +225,25 @@
 
 .bottomPad {
   height: 20px;
+}
+
+@media (min-width: 768px) {
+  .page { margin-left: var(--sidebar-width); }
+  .scroll { padding: 28px 40px 60px; max-width: none; }
+  .title { font-size: 44px; }
+  .searchRow { gap: 16px; margin-bottom: 24px; }
+  .deviceRow { gap: 24px; margin-bottom: 32px; }
+  .deviceImgBox { border-radius: 24px; }
+  .devicePrice { font-size: 24px; }
+  .section { margin-bottom: 16px; }
+  .specRow { border-radius: 16px; }
+  .specCell { padding: 18px 20px; }
+  .specVal { font-size: 16px; }
+  .specSub { font-size: 13px; }
+  .getBtn { padding: 20px; font-size: 17px; }
+  .saveBtn { padding: 18px; font-size: 16px; }
+}
+
+@media (min-width: 1200px) {
+  .scroll { padding: 32px 60px 60px; }
 }
