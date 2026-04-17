@@ -3,6 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import TopBar from '../../../components/customer/TopBar'
 import BottomNav from '../../../components/customer/BottomNav'
 import styles from './Home.module.css'
+import titaniumphone from '../../../assets/images/home1.png'
+import pixelphone from '../../../assets/images/Phone.png'
+import laptop from '../../../assets/images/Laptop.png'
+import pixel10 from '../../../assets/images/pixel 10 pro.png'
+import zfold from '../../../assets/images/zfold7.png'
+import ultra from '../../../assets/images/ultra performance.png'
+
 
 const quickLinks = [
   { icon: '📦', label: 'New Arrivals', path: '/shop' },
@@ -19,13 +26,13 @@ const categories = [
 ]
 
 const popular = [
-  { id: 1, tag: 'APPLE', name: 'Pixel Prime', price: '$999', color: '#111' },
-  { id: 2, tag: 'POPULAR', name: 'MacBook Pro', price: '$1,199', color: '#1a1a2e' },
+  { id: 1, tag: 'APPLE', name: 'Pixel Prime', price: '$999', color: '#111', img: pixelphone },
+  { id: 2, tag: 'POPULAR', name: 'MacBook Pro', price: '$1,199', color: '#1a1a2e', img: laptop },
 ]
 
 const latest = [
-  { id: 1, tag: 'NEW ARRIVAL', name: 'Pixel 10 Pro', price: '$999', color: '#d1fae5' },
-  { id: 2, tag: 'POPULAR', name: 'ZFold 7', price: '$1,799', color: '#dbeafe' },
+  { id: 1, tag: 'NEW ARRIVAL', name: 'Pixel 10 Pro', price: '$999', color: '#d1fae5', img: pixel10 },
+  { id: 2, tag: 'POPULAR', name: 'ZFold 7', price: '$1,799', color: '#dbeafe', img: zfold },
 ]
 
 const compareSpecs = [
@@ -49,7 +56,9 @@ const Home = () => {
           <p className={styles.heroSub}>Experience the new flagship smartphone mobile engineering.</p>
           <button className={styles.heroBtn} onClick={() => navigate('/shop')}>Explore Now</button>
         </div>
-        <div className={styles.heroImgBox} />
+        <div className={styles.heroImgBox}>
+          <img src={titaniumphone} alt="Titanium Phone" className={styles.heroImg} />
+        </div>
       </div>
 
       {/* Brand Filter */}
@@ -103,7 +112,9 @@ const Home = () => {
         <div className={styles.productRow}>
           {popular.map((p) => (
             <div key={p.id} className={styles.darkCard} onClick={() => navigate(`/product/${p.id}`)}>
-              <div className={styles.darkCardImg} style={{ background: p.color }} />
+              <div className={styles.darkCardImg}>
+                <img src={p.img} alt={p.name} className={styles.cardImageContent} />
+              </div>
               <span className={styles.darkCardTag}>{p.tag}</span>
               <p className={styles.darkCardName}>{p.name}</p>
               <p className={styles.darkCardPrice}>{p.price}</p>
@@ -133,7 +144,9 @@ const Home = () => {
         <div className={styles.productRow}>
           {latest.map((p) => (
             <div key={p.id} className={styles.lightCard} onClick={() => navigate(`/product/${p.id}`)}>
-              <div className={styles.lightCardImg} style={{ background: p.color }} />
+              <div className={styles.lightCardImg}>
+                <img src={p.img} alt={p.name} className={styles.cardImageContent} />
+              </div>
               <span className={styles.productTag}>{p.tag}</span>
               <p className={styles.productName}>{p.name}</p>
               <p className={styles.productPrice}>{p.price}</p>
@@ -151,7 +164,9 @@ const Home = () => {
           <p className={styles.featuredPrice}>$1,199</p>
           <button className={styles.addBtn} onClick={() => navigate('/product/1')}>Add to Cart</button>
         </div>
-        <div className={styles.featuredImgBox} />
+        <div className={styles.featuredImgBox}>
+          <img src={ultra} alt="Ultra Performance" className={styles.cardImageContent} />
+        </div>
       </div>
 
       {/* Compare Specs */}
