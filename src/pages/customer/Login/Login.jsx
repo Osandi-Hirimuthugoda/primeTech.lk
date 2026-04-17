@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import styles from './Login.module.css'
-// Replace with your actual image: import phoneImg from '../../../assets/images/phone-hero.png'
-const phoneImg = null
+import phoneImg from '../../../assets/images/loginpage.png'
+//const phoneImg = null
 
 const Login = () => {
   const [role, setRole] = useState('customer')

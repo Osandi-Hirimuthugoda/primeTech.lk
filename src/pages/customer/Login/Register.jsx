@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import styles from './Register.module.css'
-// Replace with your actual image: import gearImg from '../../../assets/images/gear-hero.png'
-const gearImg = null
+import gearImg from '../../../assets/images/register.png'
+//const gearImg = null
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
