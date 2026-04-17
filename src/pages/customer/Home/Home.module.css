@@ -6,18 +6,17 @@
   padding-bottom: 80px;
 }
 
-/* Hero */
+/* ── Hero ── */
 .hero {
   background: #0a0a0a;
-  margin: 0 16px;
+  margin: 12px 16px;
   border-radius: 20px;
-  padding: 28px 24px;
+  padding: 28px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 200px;
   overflow: hidden;
-  position: relative;
 }
 
 .heroText { flex: 1; }
@@ -25,7 +24,7 @@
 .heroTag {
   font-size: 10px;
   font-weight: 700;
-  color: #888;
+  color: #666;
   letter-spacing: 1px;
 }
 
@@ -35,50 +34,51 @@
   color: #fff;
   line-height: 1.15;
   margin: 6px 0 8px;
+  letter-spacing: -0.5px;
 }
 
 .heroSub {
   font-size: 12px;
-  color: #aaa;
+  color: #888;
   margin-bottom: 16px;
   line-height: 1.5;
+  max-width: 160px;
 }
 
 .heroBtn {
   background: var(--color-primary);
   color: #fff;
   border: none;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 10px 20px;
   font-size: 13px;
   font-weight: 600;
-  cursor: pointer;
 }
 
 .heroImgBox {
-  width: 100px;
-  height: 140px;
-  background: #222;
-  border-radius: 12px;
+  width: 90px;
+  height: 150px;
+  background: linear-gradient(160deg, #2a2a2a, #444);
+  border-radius: 16px;
   flex-shrink: 0;
+  margin-left: 12px;
 }
 
-/* Brand */
+/* ── Brand Filter ── */
 .brandRow {
   display: flex;
   gap: 8px;
-  padding: 16px 16px 8px;
+  padding: 12px 16px 4px;
 }
 
 .brandBtn {
-  padding: 7px 16px;
-  border-radius: 999px;
+  padding: 7px 18px;
+  border-radius: var(--radius-full);
   border: 1.5px solid var(--color-border);
   background: var(--color-white);
   font-size: 13px;
   font-weight: 500;
   color: var(--color-text-muted);
-  cursor: pointer;
 }
 
 .brandActive {
@@ -88,18 +88,19 @@
   font-weight: 700;
 }
 
-/* Search */
+/* ── Search ── */
 .searchWrap {
   display: flex;
   align-items: center;
   background: var(--color-white);
-  border-radius: 12px;
-  margin: 8px 16px;
+  border-radius: var(--radius-md);
+  margin: 10px 16px;
   padding: 12px 14px;
   gap: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
-.searchIcon { font-size: 15px; opacity: 0.5; }
+.searchIcon { font-size: 14px; opacity: 0.5; }
 
 .searchInput {
   border: none;
@@ -112,15 +113,14 @@
 
 .searchInput::placeholder { color: #c4c9d4; }
 
-/* Quick Links */
+/* ── Quick Links ── */
 .quickLinks {
   display: flex;
-  gap: 12px;
-  padding: 12px 16px;
+  gap: 10px;
+  padding: 10px 16px;
   overflow-x: auto;
   scrollbar-width: none;
 }
-
 .quickLinks::-webkit-scrollbar { display: none; }
 
 .quickItem {
@@ -129,66 +129,33 @@
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
+  cursor: pointer;
+  width: 64px;
 }
 
 .quickIcon {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   background: var(--color-white);
-  border-radius: 14px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  font-size: 24px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
 }
 
 .quickLabel {
   font-size: 10px;
   color: var(--color-text-muted);
   text-align: center;
-  max-width: 56px;
+  width: 64px;
   line-height: 1.3;
+  word-break: keep-all;
+  white-space: normal;
 }
 
-/* AI Banner */
-.aiBanner {
-  background: #0a0a0a;
-  margin: 8px 16px;
-  border-radius: 16px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.aiIcon { font-size: 24px; color: var(--color-primary); }
-
-.aiTitle {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-}
-
-.aiSub {
-  font-size: 12px;
-  color: #aaa;
-  line-height: 1.5;
-}
-
-.aiBtn {
-  background: var(--color-white);
-  color: var(--color-text);
-  border: none;
-  border-radius: 999px;
-  padding: 12px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 4px;
-}
-
-/* Section */
+/* ── Section ── */
 .section { padding: 16px 16px 0; }
 
 .sectionHeader {
@@ -211,60 +178,182 @@
   cursor: pointer;
 }
 
+/* ── Categories ── */
+.categoryRow {
+  display: flex;
+  gap: 10px;
+}
+
+.categoryCard {
+  flex: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.categoryImgBox {
+  font-size: 26px;
+}
+
+.categoryLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ── Popular Hardware (dark cards) ── */
 .productRow {
   display: flex;
   gap: 12px;
   overflow-x: auto;
   scrollbar-width: none;
+  padding-bottom: 4px;
 }
-
 .productRow::-webkit-scrollbar { display: none; }
 
-.productCard {
-  background: var(--color-white);
-  border-radius: 16px;
-  padding: 14px;
+.darkCard {
   flex-shrink: 0;
-  width: 160px;
+  width: 150px;
+  border-radius: 16px;
+  overflow: hidden;
   cursor: pointer;
-  position: relative;
+  background: #111;
 }
 
-.productImg {
+.darkCardImg {
   width: 100%;
   height: 110px;
-  background: #e8eaf0;
-  border-radius: 10px;
-  margin-bottom: 10px;
+}
+
+.darkCardTag {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.5px;
+  padding: 8px 12px 2px;
+}
+
+.darkCardName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  padding: 0 12px 2px;
+}
+
+.darkCardPrice {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  padding: 0 12px 12px;
+}
+
+/* ── AI Banner ── */
+.aiBanner {
+  background: #0a0a0a;
+  margin: 16px 16px 0;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.aiTop {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.aiIcon {
+  font-size: 22px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.aiTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.aiSub {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+}
+
+.aiBtn {
+  background: var(--color-white);
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  width: 100%;
+}
+
+/* ── Latest Drop (light cards) ── */
+.lightCard {
+  flex-shrink: 0;
+  width: 150px;
+  background: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+
+.lightCardImg {
+  width: 100%;
+  height: 110px;
 }
 
 .productTag {
+  display: block;
   font-size: 9px;
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: 0.5px;
+  padding: 8px 12px 2px;
 }
 
 .productName {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text);
-  margin: 2px 0;
+  padding: 0 12px 2px;
 }
 
 .productPrice {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-primary);
+  padding: 0 12px 12px;
 }
 
-/* Featured */
+/* ── Featured Tech ── */
 .featuredBanner {
   background: var(--color-white);
   margin: 16px 16px 0;
   border-radius: 16px;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
 }
+
+.featuredLeft { flex: 1; }
 
 .featuredTag {
   font-size: 10px;
@@ -277,17 +366,19 @@
   font-size: 20px;
   font-weight: 800;
   color: var(--color-text);
-  margin: 4px 0 6px;
+  margin: 4px 0 4px;
+  line-height: 1.2;
 }
 
 .featuredSub {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--color-text-muted);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  line-height: 1.4;
 }
 
 .featuredPrice {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--color-text);
   margin-bottom: 12px;
@@ -297,11 +388,61 @@
   background: var(--color-primary);
   color: #fff;
   border: none;
-  border-radius: 999px;
-  padding: 12px 24px;
-  font-size: 13px;
-  font-weight: 600;
+  border-radius: var(--radius-full);
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.featuredImgBox {
+  width: 80px;
+  height: 110px;
+  background: linear-gradient(160deg, #1c1c1e, #3a3a3c);
+  border-radius: 14px;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* ── Compare Specs ── */
+.compareRow {
+  display: flex;
+  gap: 12px;
+}
+
+.compareCard {
+  flex: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.compareImgBox {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, #1c1c1e, #2c2c2e);
+}
+
+.compareName {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text);
+  padding: 8px 10px 2px;
+  line-height: 1.3;
+}
+
+.compareSub {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  padding: 0 10px 2px;
+}
+
+.comparePrice {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--color-primary);
+  padding: 0 10px 10px;
 }
 
 .bottomPad { height: 20px; }
