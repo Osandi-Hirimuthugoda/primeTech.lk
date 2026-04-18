@@ -2,14 +2,18 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AdminTopBar from '../../../components/admin/AdminTopBar'
 import styles from './AdminProducts.module.css'
+import headphone from '../../../assets/images/Headphones.png'
+import iphone from '../../../assets/images/iPhone 15 Pro Titanium.png'
+import macbook from '../../../assets/images/MacBook Pro.png'
+import watch from '../../../assets/images/Watch.png'
 
 const categories = ['All Items', 'Phones', 'Laptops', 'Audio', 'Wearables']
 
 const products = [
-  { id: 1, category: 'PHONES', name: 'iPhone 15 Pro Max', price: '$1,199', stock: 12, status: 'in', updated: '2h ago', color: '#1c1c1e' },
-  { id: 2, category: 'LAPTOPS', name: 'MacBook Pro 16" M3', price: '$2,499', stock: 2, status: 'low', updated: '5h ago', color: '#2c2c2e' },
-  { id: 3, category: 'AUDIO', name: 'AirPods Max Space Gray', price: '$549', stock: 45, status: 'in', updated: '1d ago', color: '#111' },
-  { id: 4, category: 'WEARABLES', name: 'Ultra Watch 2 Ocean', price: '$799', stock: 8, status: 'in', updated: '3h ago', color: '#3a3a3c' },
+  { id: 1, category: 'PHONES', name: 'iPhone 15 Pro Max', price: '$1,199', stock: 12, status: 'in', updated: '2h ago', color: '#1c1c1e', img: iphone },
+  { id: 2, category: 'LAPTOPS', name: 'MacBook Pro 16" M3', price: '$2,499', stock: 2, status: 'low', updated: '5h ago', color: '#2c2c2e', img: macbook },
+  { id: 3, category: 'AUDIO', name: 'AirPods Max Space Gray', price: '$549', stock: 45, status: 'in', updated: '1d ago', color: '#111', img: headphone },
+  { id: 4, category: 'WEARABLES', name: 'Ultra Watch 2 Ocean', price: '$799', stock: 8, status: 'in', updated: '3h ago', color: '#3a3a3c', img: watch },
 ]
 
 const AdminProducts = () => {
@@ -63,7 +67,9 @@ const AdminProducts = () => {
               className={`${styles.card} ${p.status === 'low' ? styles.cardLow : ''}`}
               onClick={() => navigate(`/admin/products/${p.id}`)}
             >
-              <div className={styles.imgBox} style={{ background: p.color }} />
+              <div className={styles.imgBox} style={{ background: p.color }} >
+                <img src={p.img} alt={p.name} className={styles.img} />
+              </div>
               <div className={styles.info}>
                 <p className={styles.category}>{p.category}</p>
                 <p className={styles.name}>{p.name}</p>

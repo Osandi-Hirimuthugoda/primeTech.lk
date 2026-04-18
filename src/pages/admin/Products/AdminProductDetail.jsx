@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import AdminTopBar from '../../../components/admin/AdminTopBar'
 import styles from './AdminProductDetail.module.css'
+import headphone from '../../../assets/images/Headphones.png'
+import iphone from '../../../assets/images/iPhone 15 Pro Titanium.png'
+import macbook from '../../../assets/images/MacBook Pro.png'
+import watch from '../../../assets/images/Watch.png'
 
 const productData = {
-  1: { name: 'iPhone 16 Pro', sub: 'Desert Titanium, 256GB', price: '1099', stock: '42', display: '6.3" OLED', chip: 'A18 Pro', camera: '48MP Triple', status: 'In Stock', color: '#1c1c1e' },
-  2: { name: 'MacBook Pro 16" M3', sub: 'Space Black, 512GB', price: '2499', stock: '2', display: '16.2" Liquid', chip: 'M3 Pro', camera: '12MP', status: 'Low Stock', color: '#2c2c2e' },
-  3: { name: 'AirPods Max', sub: 'Space Gray', price: '549', stock: '45', display: 'N/A', chip: 'H2', camera: 'N/A', status: 'In Stock', color: '#111' },
-  4: { name: 'Ultra Watch 2 Ocean', sub: 'Titanium, 49mm', price: '799', stock: '8', display: '2.1" OLED', chip: 'S9', camera: 'N/A', status: 'In Stock', color: '#3a3a3c' },
+  1: { name: 'iPhone 16 Pro', sub: 'Desert Titanium, 256GB', price: '1099', stock: '42', display: '6.3" OLED', chip: 'A18 Pro', camera: '48MP Triple', status: 'In Stock', color: '#1c1c1e', img: iphone },
+  2: { name: 'MacBook Pro 16" M3', sub: 'Space Black, 512GB', price: '2499', stock: '2', display: '16.2" Liquid', chip: 'M3 Pro', camera: '12MP', status: 'Low Stock', color: '#2c2c2e', img: macbook },
+  3: { name: 'AirPods Max', sub: 'Space Gray', price: '549', stock: '45', display: 'N/A', chip: 'H2', camera: 'N/A', status: 'In Stock', color: '#111', img: headphone },
+  4: { name: 'Ultra Watch 2 Ocean', sub: 'Titanium, 49mm', price: '799', stock: '8', display: '2.1" OLED', chip: 'S9', camera: 'N/A', status: 'In Stock', color: '#3a3a3c', img: watch },
 }
 
 const AdminProductDetail = () => {
@@ -36,6 +40,7 @@ const AdminProductDetail = () => {
       <div className={styles.scroll}>
         {/* Hero Image */}
         <div className={styles.heroBox} style={{ background: base.color }}>
+          <img src={base.img} alt={base.name} className={styles.heroImg} />
           <div className={styles.statusCard}>
             <p className={styles.statusLabel}>STATUS</p>
             <p className={styles.statusVal}>{base.status}</p>

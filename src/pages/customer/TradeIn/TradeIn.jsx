@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import TopBar from '../../../components/customer/TopBar'
 import BottomNav from '../../../components/customer/BottomNav'
 import styles from './TradeIn.module.css'
+import tradein from '../../../assets/images/trade in.png'
 
 const deviceTypes = ['iPhone', 'iPad', 'MacBook', 'Watch']
 
@@ -45,7 +46,9 @@ const TradeIn = () => {
         </h1>
 
         {/* Hero Image Placeholder */}
-        <div className={styles.heroImg} />
+        <div className={styles.heroImg} >
+          <img src={tradein} alt="Trade-In" className={styles.heroImg} />
+        </div>
 
         {/* Step 1 */}
         <div className={styles.stepHeader}>
